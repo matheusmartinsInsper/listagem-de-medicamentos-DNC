@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;900&family=Noto+Sans+Display:wght@200;400;700&family=Nunito:wght@400;700&family=Roboto:wght@900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Cadastro Remedios</title>
+  </head>
+  <body>
+    <header>
+      <div><h2>Home</h2></div>
+      <div>
+        <h2>Cadastro <br />de Medicamentos</h2>
+      </div>
+      <div>
+        <h2>Cadastro <br />de Vacinas</h2>
+      </div>
+      <div>
+        <h2>Cadastro <br />de Cosméticos</h2>
+      </div>
+    </header>
+    <section>
+      <div><img src="imagemremedio.svg" alt="" /></div>
+      <div>
+        <h1>Cadastro de Medicamentos <br />Farmácia da gente</h1>
+      </div>
+    </section>
+    <main>
+      <div>
+        <form action="">
+          <div>
+            <label for="">Nome do Medicamento</label>
+            <input
+              type="text"
+              placeholder="Dipirona"
+              required
+              id="nomeMedicamento"
+            />
+            <label for="">Quantidade Disponível</label>
+            <input
+              type="text"
+              placeholder="100"
+              required
+              id="quantidadeMedicamento"
+            />
+            <label for="">Classe de Medicamento</label>
+            <input
+              type="text"
+              placeholder="Antibiótico"
+              required
+              id="classeMedicamento"
+            />
+          </div>
+
+          <button id="button" onclick="adicionarRemedio()">Cadastro</button>
+        </form>
+      </div>
+      <div><table></table></div>
+    </main>
+    <script>
+      let arrayRemedios = [];
+      function adicionarRemedio() {
+        event.preventDefault();
+        let nomeMedicamento = document.getElementById("nomeMedicamento").value;
+        let quantidadeMedicamento = document.getElementById(
+          "quantidadeMedicamento"
+        ).value;
+        let classeMedicamento =
+          document.getElementById("classeMedicamento").value;
+        let pedido = {
+          Nome: nomeMedicamento,
+          quantidade: quantidadeMedicamento,
+          classe: classeMedicamento,
+        };
+        arrayRemedios.push(pedido);
+        console.log(arrayRemedios);
+        console.log(pedido);
+      }
+    </script>
+  </body>
+</html>
